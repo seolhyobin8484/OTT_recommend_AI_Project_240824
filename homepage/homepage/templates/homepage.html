@@ -3,69 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-        }
-        .navbar {
-            background-color: #007bff;
-            padding: 10px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .content {
-            padding: 20px;
-        }
-        .footer {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .links {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .links a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>CCM_Cinema</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <a href="#">CCM_Cinema</a>
+    {% if login_res %}
+        {% include "tab/userTab.html" %}
+    {% else %}
+        {% include "tab/noneUserTab.html" %}
+    {% endif %}
+
+    <main>
+        <div class="content">
+            <div class="welcome-text">
+                <h1>취향저격 영상 추천</h1>
+            </div>
+            {% if login_res == True %}
+                <h1>{{ name }}님이 좋아하실만한 영화 10개를 뽑았어요!</h1>
+                {% endif %}
+            <div id="movie-container" class="movie-container">
+                 {% if login_res == True %}
+                    {% for movie in movies %}
+                        <div class="movie-item">
+                            <a href="{% url 'detailpage_int' movie_id=movie.pk %}">
+                                <img src="https://image.tmdb.org/t/p/w300{{ movie.fields.poster_path }}" alt="{{ movie.fields.title }}">
+                                <h2>{{ movie.fields.title }}</h2>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <form method="GET" action="{% url 'search' %}" id="filter-form">
+                    {% if login_res == True %}
+                    <div class="search-container">
+                        {% else %}
+                    <div class="search-container_nonuser">
+                        {% endif %}
+                        <div class="form-group">
+                            <!-- 검색어 입력 필드 -->
+                            <input type="text"
+                                   class="search-box"
+                                   id="search-query"
+                                   name="q"
+                                   value="{{ query|default:'' }}"
+                                   placeholder="영화명을 입력하세요.">  <!-- 검색어 입력 필드 -->
+                            <button type="submit" class="search-button">검색</button>
+
+                            {% if error %}
+                                <p class ='warning'>영화명을 올바르게 입력해주세요.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="nav-links">
-            <a href="#">홈</a>
-            <a href="#">더보기</a>
-            <a href="#">Contact</a>
-            <a href="login.html">로그인</a>
-        </div>
-    </div>
-    <div class="content">
-        <h1>CCM시네마에 오신 것을 환영합니다!</h1>
-        <p>이 사이트는 여러분의 취향에 맞는 영상 컨텐츠를 추천해주는 사이트입니다.</p>
-    </div>
-    <div class="footer">
-        &copy; 2024 Code Comedian
-    </div>
+    </main>
 </body>
 </html>

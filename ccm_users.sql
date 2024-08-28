@@ -1,0 +1,1 @@
+select * from ccm_cinema.users;

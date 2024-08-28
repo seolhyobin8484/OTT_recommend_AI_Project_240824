@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        p {
+            color: black;  /* 텍스트 색상을 검은색으로 설정 */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #4d4d4d;
+            color : white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            max-width: 1200px;
+            margin: 30px auto 20px  auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-selection {
+            margin-top: auto;
+            padding: 20px;
+            background-color: white;
+            border-top: 2px solid #ddd;
+            max-width: calc(100% - 40px);
+            box-sizing: border-box;
+            margin-left: -20px;
+            margin-right: auto;
+        }
+
+        .review-selection h2 {
+            margin-top: 0;
+        }
+
+        .movie-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: black;
+            margin-left: 20px;
+        }
+        .movie-details {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .movie-image img {
+            max-width: 300px;
+            border-radius: 8px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .movie-info {
+            flex: 1;
+            color: black;
+        }
+        .movie-info h3 {
+            margin-top: 0;
+        }
+        .movie-info p {
+            margin: 20px 0;
+            font-size : 19px;
+        }
+        .movie-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .movie-info li {
+            margin: 5px 0;
+        }
+        .movie-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .movie-list img {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .movie-list {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            padding: 0 20px;
+            flex-direction: column;
+        }
+        .movie-list-items {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 90px;
+            padding: 0 20px;
+        }
+        .movie-list-items a {
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+
+        }
+        .movie-list-items img {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-list h2 {
+            color: black;
+        }
+
+        .recommendation-text {
+            font-size: 14px;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .back-link {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: black;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: black;
+        }
+        .star_rating {
+          width: 100%;
+          box-sizing: border-box;
+          display: inline-flex;
+          flex-direction: row;
+             color: black;
+          justify-content: flex-start;
+            margin-left: 0;
+            margin-bottom: 15px;
+        }
+        .star_rating .star {
+          width: 25px;
+          height: 25px;
+          margin-right: 10px;
+          display: inline-block;
+
+          background: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FE2bww%2FbtsviSSBz4Q%2F5UYnwSWgTlFt6CEFZ1L3Q0%2Fimg.png') no-repeat;
+          background-size: 100%;
+          box-sizing: border-box;
+        }
+        .star_rating .star.on {
+          width: 25px;
+          height: 25px;
+          margin-right: 10px;
+          display: inline-block;
+          background: url('https://blog.kakaocdn.net/dn/b2d6gV/btsvbDoal87/XH5b17uLeEJcBP3RV3FyDk/img.png') no-repeat;
+          background-size: 100%;
+          box-sizing: border-box;
+
+        }
+
+        .star_box {
+          width: 1100px;
+          box-sizing: border-box;
+          display: inline-block;
+          background: #F3F4F8;
+            margin-left: 0;
+          border: 0;
+          border-radius: 10px;
+          height: 100px;
+          resize: none;
+          padding: 15px;
+          font-size: 13px;
+          font-family: sans-serif;
+            margin-bottom: 20px;
+        }
+        .btn02 {
+          display:block;
+          width: 150px;
+          font-weight: bold;
+          border: 0;
+          border-radius: 10px;
+          max-height: 50px;
+          padding: 10px 20px;
+          font-size: 1.1em;
+          text-align: center;
+            background:#d5dee8;
+            color: #4d4d4d;
+            margin-left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    {% if login_res %}
+        {% include "tab/userTab.html" %}
+    {% else %}
+        {% include "tab/noneUserTab.html" %}
+    {% endif %}
+
+    <div class="container">
+        <div class="movie-header">
+            <h1 class="movie-title">{{ movie.title }}</h1>
+            <a href="{% url 'homepage' %}?tab={{ tab }}" class="back-link"> home </a> <!-- 버튼 이동 -->
+        </div>
+        <hr><br>
+        <div class="movie-details">
+            <div class="movie-image">
+                <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }}">
+            </div>
+            <div class="movie-info">
+                <p><strong>줄거리:</strong> {{ movie.overview }}</p>
+                <p><strong>평점:</strong> {{ formatted_rating }}</p>
+                <p><strong>상영시간:</strong> {{ hours }}시간 {{ minutes }}분</p>
+                <p><strong>감독:</strong>
+                    {% for director in directors %}
+                        {{ director.fields.name }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        No directors available
+                    {% endfor %}
+                </p>
+
+                <p><strong>출연:</strong>
+                    {% for actor in actors %}
+                        {{ actor.fields.name }}{% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        No actors available
+                    {% endfor %}
+                </p>
+
+                <p><strong>장르:</strong>
+                    {% for genre in genres %}
+                        {{ genre }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+
+                <p><strong>특징:</strong>
+                    {% for keyword in keywords %}
+                        {{ keyword }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+
+        <!-- Other movies from the same genre -->
+        <div class="movie-list">
+            <h2>비슷한 {{ genres|first }} 영화! 더 보고 싶으시다면?</h2>
+            <div class="movie-list-items">
+                {% for same_movie in same_genre_movies %}
+                    <a href="{% url 'detailpage_int' movie_id=same_movie.pk %}">
+                        <img src="https://image.tmdb.org/t/p/w500{{ same_movie.fields.poster_path }}" alt="{{ same_movie.fields.title }}">
+                        <p>{{ same_movie.fields.title }}</p>
+                    </a>
+                {% empty %}
+                    <p>No other movies found.</p>
+                {% endfor %}
+        </div>
+
+        <div class="review-selection">
+            <h2>리뷰작성 폼</h2>
+            <div class ="star_rating">
+                <span class = "star" value="1"></span>
+                <span class = "star" value="2"></span>
+                <span class = "star" value="3"></span>
+                <span class = "star" value="4"></span>
+                <span class = "star" value="5"></span>
+            </div>
+            <form method="POST" id="review-form">
+                {% csrf_token %}
+                <textarea name = "body" class="star_box" placeholder="리뷰 내용을 작성해주세요." ></textarea>
+                <input type="hidden" name="rating" id="rating" value="0">
+                <input type="submit" class="btn02" value="리뷰 등록"/>
+            </form>
+            <br><br>
+            <p>리뷰 :</p>
+            {% for comment in comments %}
+                <div class="star_rating">
+                    {% for i in "12345" %}
+                        {% if i <= comment.rating|stringformat:"d" %}
+                            <span class="star on"></span>
+                        {% else %}
+                            <span class="star"></span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <p>{{ comment.user }}</p>
+                <p>{{ comment.body }} - {{ comment.date }}</p>
+            {% empty %}
+              <p>리뷰가 없습니다.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.star_rating > .star').forEach(function(star) {
+                star.addEventListener('click', function() {
+                    this.parentElement.querySelectorAll('.star').forEach(function(s) {
+                        s.classList.remove('on');
+                    });
+                    this.classList.add('on');
+                    let previousSibling = this.previousElementSibling;
+                    while (previousSibling) {
+                        previousSibling.classList.add('on');
+                        previousSibling = previousSibling.previousElementSibling;
+                    }
+
+                    document.getElementById('rating').value = this.getAttribute('value');
+                });
+            });
+        });
+
+        // Prevent form submission if rating is 0
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            const ratingValue = document.getElementById('rating').value;
+            if (ratingValue === '0') {
+                event.preventDefault();  // Prevent the form from submitting
+                alert('별점을 선택해주세요.');  // Show an alert to the user
+            }
+        });
+        </script>
+
+
+        </div>
+    </div>
+</body>
+</html>

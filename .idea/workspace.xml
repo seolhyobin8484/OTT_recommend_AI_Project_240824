@@ -6,18 +6,52 @@
   <component name="ChangeListManager">
     <list default="true" id="84fbfe01-192c-4564-ae33-24b9965590b6" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/OTT_recommend_AI.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/databases.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccm_movies.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ccm_users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/AItest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/data/db_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/data/db_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/data/db_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/databases.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/movies_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/engine/svd_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/static/genre_style.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/homepage/homepage/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/genre/action.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/genre/anime.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/genre/comedy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/genre/drama.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/genre/horror.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/genre/romance.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/homepage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/menu/aboutus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/menu/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/menu/myinfo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/menu/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/menu/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/menu/update_user_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/tab/noneUserTab.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/tab/userTab.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/homepage/homepage/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homepage/manage.py" afterDir="false" />
+    </list>
+    <list id="76f16104-5d90-46a9-8458-59796973abb3" name="Changes by 2조 박하진" comment="" />
+    <list id="10798e15-0e47-48a3-9501-26fc36763db8" name="Changes by JW" comment="">
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/recommendation.html" afterDir="false" />
+    </list>
+    <list id="301576ef-3ccc-4847-9cc6-b7343e9cf87f" name="Changes by USER" comment="" />
+    <list id="fe088181-b635-4db0-8493-bbbcbe8829ef" name="Changes by YM" comment="">
+      <change afterPath="$PROJECT_DIR$/homepage/homepage/templates/detailpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +61,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
+        <option value="package.json" />
+        <option value="SQL File" />
+        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -48,22 +97,149 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Database Script.ccm_movies.sql.executor&quot;: &quot;Run&quot;,
+    &quot;Database Script.ccm_users.sql.executor&quot;: &quot;Run&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.login.html.executor&quot;: &quot;Run&quot;,
+    &quot;Python.AItest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.absd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.crawling.executor&quot;: &quot;Run&quot;,
+    &quot;Python.databases.executor&quot;: &quot;Run&quot;,
     &quot;Python.dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.svd_code.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.views.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/StartPython/OTT_recommend_AI&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;3a890f69-5b45-442f-8a21-6ae9508e9ada&quot;,
+      &quot;3a890f69-5b45-442f-8a21-6ae9508e9ada/schema/\&quot;ccm_cinema\&quot;&quot;
+    ],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\StartPython\OTT_recommend_AI\homepage\homepage\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\StartPython\OTT_recommend_AI\engine\data" />
+      <recent name="D:\StartPython\OTT_recommend_AI\engine" />
+      <recent name="D:\StartPython\OTT_recommend_AI\homepage\homepage\templates\menu" />
+      <recent name="D:\StartPython\OTT_recommend_AI\homepage\homepage\templates\genre" />
+      <recent name="D:\StartPython\OTT_recommend_AI\homepage\homepage" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\StartPython\OTT_recommend_AI\engine\data" />
+      <recent name="D:\StartPython\OTT_recommend_AI\engine" />
+      <recent name="D:\StartPython\OTT_recommend_AI\homepage\homepage" />
+      <recent name="D:\StartPython\OTT_recommend_AI\homepage\homepage\templates" />
+      <recent name="D:\StartPython\OTT_recommend_AI" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.svd_code">
+    <configuration name="ccm_movies.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/ccm_movies.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="3a890f69-5b45-442f-8a21-6ae9508e9ada" namespace="schema/&quot;ccm_cinema&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ccm_users.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <data-source id="3a890f69-5b45-442f-8a21-6ae9508e9ada" />
+      <data-source id="3a890f69-5b45-442f-8a21-6ae9508e9ada" namespace="schema/&quot;ccm_cinema&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="crawling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OTT_recommend_AI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/engine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\StartPython\OTT_recommend_AI\engine\crawling.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="svd_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OTT_recommend_AI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homepage/homepage" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\StartPython\OTT_recommend_AI\engine\svd_code.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OTT_recommend_AI" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/homepage/homepage" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homepage/homepage/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.svd_code" />
+        <item itemvalue="Python.crawling" />
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -83,7 +259,26 @@
       <updated>1722388897861</updated>
       <workItem from="1722388898815" duration="3441000" />
       <workItem from="1722400967959" duration="10332000" />
-      <workItem from="1722468800970" duration="920000" />
+      <workItem from="1722468800970" duration="16340000" />
+      <workItem from="1722555660558" duration="2096000" />
+      <workItem from="1722557996171" duration="63000" />
+      <workItem from="1722558066068" duration="18843000" />
+      <workItem from="1722580152895" duration="1549000" />
+      <workItem from="1722584383020" duration="1634000" />
+      <workItem from="1722586377182" duration="675000" />
+      <workItem from="1722587125599" duration="50231000" />
+      <workItem from="1723437808107" duration="56637000" />
+      <workItem from="1724025773202" duration="30024000" />
+      <workItem from="1724211089633" duration="4372000" />
+      <workItem from="1724295047257" duration="33699000" />
+      <workItem from="1724648004903" duration="776000" />
+      <workItem from="1724648840577" duration="77000" />
+      <workItem from="1724648951947" duration="33000" />
+      <workItem from="1724649024174" duration="46000" />
+      <workItem from="1724649098736" duration="13000" />
+      <workItem from="1724649126112" duration="17000" />
+      <workItem from="1724649182635" duration="32000" />
+      <workItem from="1724649256441" duration="33921000" />
     </task>
     <servers />
   </component>
@@ -91,6 +286,16 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/OTT_recommend_AI$dataset.coverage" NAME="dataset Coverage Results" MODIFIED="1722390881012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OTT_recommend_AI$dataset.coverage" NAME="dataset Coverage Results" MODIFIED="1722574530986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
+    <SUITE FILE_PATH="coverage/manage_py$get_data.coverage" NAME="get_data Coverage Results" MODIFIED="1724202294726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
+    <SUITE FILE_PATH="coverage/OTT_recommend_AI$AItest.coverage" NAME="AItest Coverage Results" MODIFIED="1722493433985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
+    <SUITE FILE_PATH="coverage/manage_py$views.coverage" NAME="views Coverage Results" MODIFIED="1723103928757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homepage/homepage" />
+    <SUITE FILE_PATH="coverage/manage_py$dataset.coverage" NAME="crawling Coverage Results" MODIFIED="1723537276415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
+    <SUITE FILE_PATH="coverage/manage_py$svd_code.coverage" NAME="svd_code Coverage Results" MODIFIED="1724806158956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homepage/homepage" />
+    <SUITE FILE_PATH="coverage/OTT_recommend_AI$databases.coverage" NAME="databases Coverage Results" MODIFIED="1722495932310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
+    <SUITE FILE_PATH="coverage/OTT_recommend_AI$absd.coverage" NAME="absd Coverage Results" MODIFIED="1722567165495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
+    <SUITE FILE_PATH="coverage/manage_py$test.coverage" NAME="test Coverage Results" MODIFIED="1724033373923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/homepage/homepage" />
+    <SUITE FILE_PATH="coverage/manage_py$databases.coverage" NAME="databases Coverage Results" MODIFIED="1722586443612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
+    <SUITE FILE_PATH="coverage/manage_py$crawling.coverage" NAME="crawling Coverage Results" MODIFIED="1724033311454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/engine" />
   </component>
 </project>

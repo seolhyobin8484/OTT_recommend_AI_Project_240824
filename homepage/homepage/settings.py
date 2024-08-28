@@ -9,11 +9,15 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
 from pathlib import Path
+import os
+
+
+#from .my_settings import DATABASES, SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,8 +29,10 @@ SECRET_KEY = "django-insecure-0dvoti!@0yo2+u0sjfvgg)y3fq47g38(j^5zj&ykf^$#^!0*ek
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+# 기본 이미지 URL
+MOVIE_POSTER_BASE_URL = 'https://image.tmdb.org/t/p/original/?language=ko'
 
 # Application definition
 
@@ -75,11 +81,15 @@ WSGI_APPLICATION = "homepage.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
+#SECRET_KEY = 'django-insecure-0dvoti!@0yo2+u0sjfvgg)y3fq47g38(j^5zj&ykf^$#^!0*ek'  # 기존 settings.py에 있는 SECRET_KEY를 이곳으로 이동
 
 
 # Password validation
@@ -116,13 +126,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    # BASE_DIR / 'static'
+    os.path.join(BASE_DIR, '.\\homepage\\static')
+
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+SESSION_COOKIE_AGE = 1209600  # 2주간 로그아웃 전까지
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+

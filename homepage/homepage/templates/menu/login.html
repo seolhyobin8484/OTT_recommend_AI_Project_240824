@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body class="login_body">
+    {% include "tab/noneUserTab.html" %}
+
+    <div class="login-container">
+        <h2>CCM 시네마</h2>
+        <form id="login_post" name="login_post" method="post" action="{% url 'login_post' %}">
+        {% csrf_token %}
+            <input type="text" placeholder="id" name = "id" required>
+            <input type="password" placeholder="password" name="password"required>
+
+            {% if login_res == False %}
+            <p class = 'warning'>아이디 또는 비밀번호를 확인해주세요.</p>
+            {% endif %}
+            <button type="submit">Login</button>
+            <p>계정이 없으신가요? <a href="{% url 'signup' %}">회원가입</a></p>
+        </form>
+
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

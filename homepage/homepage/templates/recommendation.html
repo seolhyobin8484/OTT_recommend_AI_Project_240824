@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCM_Cinema</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'genre_style.css' %}">
+</head>
+<body>
+    {% if login_res == True %}
+        {% include "tab/userTab.html" %}
+    {% else %}
+        {% include "tab/noneUserTab.html" %}
+    {% endif %}
+
+  <main class="content">
+    <div class="welcome-text">
+        <h1>취향저격 영상 추천</h1>
+        <p>Welcome to CCM_Cinema!</p>
+    </div>
+    <div id="movie-container" class="movie-container">
+        {% for key, value in movies.items %}
+            <div class="movie-item">
+                <a href="{% url 'detailpage_str' movie_id=key %}">
+                    <img src="https://image.tmdb.org/t/p/w300{{ value }}" alt="{{ key }}">
+                    <h2>{{ key }}</h2>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+
+
+</body>
+</html>
+

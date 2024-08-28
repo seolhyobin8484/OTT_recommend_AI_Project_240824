@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+{% if login_res == True %}
+    {% include "tab/userTab.html" %}
+    <div class="info">
+
+        <h1>CCM_Cinema</h1>
+        <h3>Code Comedian (코드 코미디언)</h3>
+        <p>
+            <br> PM : 설효빈 <br>
+            프론트앤드 (Django, Html/Css, JS) : 설효빈, 박하진, 김영민<br>
+            백앤드 (Python, TF-IDF, Mysql) : 설효빈, 박주원, 이우창<br>
+            PPT : 이우창<br>
+            사용된 API: tmdb<br>
+        </p>
+    </div>
+    {% else %}
+{% include "tab/noneuserTab.html" %}
+    <div class="login-required">
+                <h2>로그인 후 이용가능합니다.</h2>
+            <p class="login-message">로그인 하시겠습니까?</p>
+                <div class="button-group">
+                    <a href="{% url 'login' %}" class="button yes-button">예</a>
+                    <a href="{% url 'homepage' %}" class="button no-button">아니오</a>
+                </div>
+</div>
+    {% endif %}
+    </body>
+    </html>
+
+
+

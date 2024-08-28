@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+        {% if login_res == True %}
+        {% include "tab/userTab.html" %}
+
+    <div class="content">
+        <!-- 로그인된 경우 공지사항 목록을 표시 -->
+        <h2>공지사항</h2>
+
+        <div class="container">
+            <div class="header-board">
+                <div>분류</div>
+                <div>제목</div>
+                <div>작성자</div>
+                <div>작성일</div>
+                <div>조회</div>
+                <div>좋아요</div>
+            </div>
+
+            <div class="post-list">
+                <div class="post-item">
+                    <div class="post-category">[공지]</div>
+                    <a href="#" class="post-title">[공지] 이벤트 안내</a>
+                    <div class="post-author">관리자</div>
+                    <div class="post-date">2024.08.12</div>
+                    <div class="post-views">조회 1,323</div>
+                    <div class="post-likes">좋아요 10</div>
+                </div>
+                <div class="post-item">
+                    <div class="post-category">[공지]</div>
+                    <a href="#" class="post-title">[공지] 업데이트 내용</a>
+                    <div class="post-author">운영팀</div>
+                    <div class="post-date">2024.08.11</div>
+                    <div class="post-views">조회 108</div>
+                    <div class="post-likes">좋아요 8</div>
+                </div>
+                <div class="post-item">
+                    <div class="post-category">[공지]</div>
+                    <a href="#" class="post-title">[공지] 리뷰 작성</a>
+                    <div class="post-author">운영팀</div>
+                    <div class="post-date">2024.08.27</div>
+                    <div class="post-views">조회 1</div>
+                    <div class="post-likes">좋아요 1</div>
+                </div>
+                <!-- 추가적인 게시물 항목들 -->
+            </div>
+        </div>
+        {% else %}
+         {% include "tab/noneUserTab.html" %}
+        <!-- 로그인되지 않은 경우 메시지와 로그인 링크를 표시 -->
+        <div class="login-required">
+            <h2>로그인 후 이용가능합니다.</h2>
+            <p class="login-message">로그인 하시겠습니까?</p>
+            <div class="button-group">
+                <a href="{% url 'login' %}" class="button yes-button">예</a>
+                <a href="{% url 'homepage' %}" class="button no-button">아니오</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        &copy; 2024 CCN_Cinema &nbsp;&nbsp;&nbsp; by. Code Comedian
+    </div>
+</body>
+</html>
