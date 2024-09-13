@@ -50,7 +50,3 @@ TF-IDF(Term Frequency-Inverse Document Frequency) 기법은 문서에서 특정 
 - **백엔드**: Python, tmdb
 - **데이터베이스**: MYSQL, Sqllite
 - **추천 알고리즘**: SVD, TF-IDF
-
-## 기여하기
-
-기여를 원하신다면, 이 프로젝트를 포크하고 풀 리퀘스트를 통해 변경 사항을 제출해 주세요. 이슈를 보고하거나 기능 요청을 하실 수도 있습니다.
